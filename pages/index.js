@@ -1,5 +1,13 @@
 import Head from 'next/head';
+//import css
+import styles from "../styles/Home.module.css";
 
+import Headernav from '@/components/Headernav';
+import { Typography } from '@mui/material';
+
+import CrudApp from '@/components/projects/php/CrudApp';
+import MultiUser from '@/components/projects/php/MultiUser';
+import AboutMe from '@/components/aboutme/AboutMe';
 
 export default function Home() {
   return (
@@ -10,9 +18,16 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <h1>Hello world</h1>
+      <header>
+        <Headernav />
+      </header>
+      <main className={styles.mainFlex}>
+        <AboutMe />
+        <Typography component= 'h2'> PHP/MySQL</Typography>
+        <CrudApp />
+        <MultiUser />
       </main>
     </>
   )
 }
+      
